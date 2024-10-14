@@ -71,8 +71,8 @@ app.get('/shoes', (req, res) => {
         }
     }
     if (req.query.type) {
-        const type = req.query.type.toLowerCase();
-        filteredShoes = filteredShoes.filter(shoe => shoe.type.toLowerCase() === type);
+        const type = req.query.type;
+        filteredShoes = filteredShoes.filter(shoe => shoe.type === type);
     }
 
     res.send(filteredShoes);
